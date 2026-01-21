@@ -1,0 +1,16 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-primary: #3e497e;
+  --color-secondary-teal: #00897b;
+  --color-background-light: #f9fafb;
+  --color-background-dark: #1d233e;
+  --font-display: "Manrope", sans-serif;
+}
+
+@layer utilities {
+  .hide-scrollbar::-webkit-scrollbar { display: none; }
+  .hide-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
