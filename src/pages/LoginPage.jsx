@@ -21,7 +21,7 @@ const LoginPage = () => {
     setLoading(true);
     setError('');
 
-    const endpoint = isLogin ? '/auth/login' : '/auth/register';
+    const endpoint = isLogin ? '/login' : '/register';
     const payload = isLogin 
       ? { email: formData.email, password: formData.password }
       : formData;
