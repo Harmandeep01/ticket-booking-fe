@@ -3,7 +3,7 @@ import axios from 'axios';
 // Create an instance with custom config
 const api = axios.create({
   // Replace this with your actual backend URL
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:5000/api/v1',
+  baseURL: import.meta.env.VITE_API_URL || 'https://ticket-booking-be-27tk.onrender.com',
   headers: {
     'Content-Type': 'application/json',
   },
