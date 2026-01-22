@@ -4,6 +4,8 @@ import api from '../config/api';
 import Sidebar from '../components/Sidebar';
 import EventCard from '../components/EventCard';
 import BookingModal from '../components/BookingModal';
+import EnrolledEventCard from '../components/EnrolledEventCard';
+import ExploreEventCard from '../components/ExploreEventCard';
 const Dashboard = () => {
   const [myBookings, setMyBookings] = useState([]);
   const [allEvents, setAllEvents] = useState([]);
@@ -81,14 +83,14 @@ const [userData, setUserData] = useState(null);
             <div className="flex gap-6 overflow-x-auto hide-scrollbar pb-4">
               {myBookings.length > 0 ? (
                 myBookings.map((booking) => (
-                  <EventCard 
-      key={booking._id}
-      ticketId={booking._id} // Using booking ID for the ticket reference
-      title={booking.event.title}
-      date={booking.event.date}
-      seatsBooked={booking.seatsBooked}
-      isEnrolled={true}
-    />
+                    <EnrolledEventCard
+    key={booking._id}
+    ticketId={booking._id}
+    title={booking.event.title}
+    date={booking.event.date}
+    seatsBooked={booking.seatsBooked}
+  />
+
                 ))
               ) : (
                 <p className="text-gray-500 text-sm italic">No events booked yet.</p>
@@ -101,11 +103,11 @@ const [userData, setUserData] = useState(null);
             <h2 className="text-2xl font-bold tracking-tight mb-8">Explore Global Events</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
               {allEvents.map((event) => (
-      <EventCard 
-        key={event._id}
-        {...event}
-        onBook={() => setSelectedEvent(event)} 
-      />
+       <ExploreEventCard
+    key={event._id}
+    {...event}
+    onBook={() => setSelectedEvent(event)}
+  />
     ))}
     {selectedEvent && (
       <BookingModal 

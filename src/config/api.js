@@ -1,7 +1,8 @@
 import axios from "axios";
 
 const api = axios.create({
-  baseURL: "https://ticket-booking-be-27tk.onrender.com/api",
+  // baseURL: "http://localhost:5000/api",
+   baseURL: "https://ticket-booking-be-27tk.onrender.com/api",
   headers: { "Content-Type": "application/json" },
   timeout: 10000,
 });
